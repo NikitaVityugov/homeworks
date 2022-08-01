@@ -42,3 +42,6 @@ public class HW2 {
         System.out.println("Результат: правильно " + correctCount + ", неправильно " + wrongCount);
     }
 }
+
+ // for (Question value : questions) {
+    //    System.out.println(value.question);
