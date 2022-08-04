@@ -11,7 +11,7 @@ class Question {
         this.answer=answer;
         this.answersOptions= answersOptions;
     }
-    public static void main(String[] args) {
+    public static <questions> void main(String[] args) {
 
         Question question1=new Question("Сколько секунд в минуте?", 60, new int[] {50, 55, 60, 65, 70});
         Question question2=new Question("Сколько  часов в сутках?", 24, new int[] {24, 25, 26, 27});
@@ -27,7 +27,7 @@ class Question {
             System.out.println(questions[i].question);
 
 
-            for (int j = 0; j < questions.length ; j++) {
+            for (int j = 0; j < questions[i].answersOptions.length ; j++) {
                 System.out.println(questions[i].answersOptions[j]);
             }
 
