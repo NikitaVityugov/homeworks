@@ -11,7 +11,7 @@ class Question {
         this.answer=answer;
         this.answersOptions= answersOptions;
     }
-    public static <questions> void main(String[] args) {
+    public static void main(String[] args) {
 
         Question question1=new Question("Сколько секунд в минуте?", 60, new int[] {50, 55, 60, 65, 70});
         Question question2=new Question("Сколько  часов в сутках?", 24, new int[] {24, 25, 26, 27});
@@ -23,32 +23,50 @@ class Question {
 
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < questions.length; i++) {
-            System.out.println(questions[i].question);
+      /*  for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i].question);*/
+        int i = 0;
+            while (i < questions.length) {
+                System.out.println(questions[i].question);
+                i++;
 
 
-            for (int j = 0; j < questions[i].answersOptions.length ; j++) {
+
+           /* for (int j = 0; j < questions[i].answersOptions.length ; j++) { //  each
                 System.out.println(questions[i].answersOptions[j]);
-            }
-
-              /*  for (int k = 0; k < newArr[1][i].length; k++) {
-                    System.out.println(newArr[1][i][k]); // !!!почему выводится строка, а не элемент??
+            }*/
+                int k = 0;
+                for (Question j : questions) {
+                    System.out.println(j.answersOptions[k]);
                 }
-*/
+
                 System.out.println("Ваш ответ: ");
 
-                Integer answerUser = scanner.nextInt();
-                if (answerUser.equals(questions[i].answer)) {   // как проверить всю строку?
+                int answerUser = scanner.nextInt();
+                switch (answerUser) {
+                    case 60:
+                    case 365:
+                    case 24:
+                        correctCount = correctCount + 1;
+                        System.out.println("Верно ");
+                        break;
+
+                    default:
+                        wrongCount = wrongCount + 1;
+                        System.out.println("Неверно ");
+                        break;
+
+                }
+               /* if (answerUser.equals(questions[i].answer)) {   // switch
                     System.out.println("Верно ");
                     correctCount = correctCount + 1;
                 } else {
 
                     System.out.println("Неверно ");
                     wrongCount = wrongCount + 1;
-                }
-
-        }
-
+                }*/
+            }
         System.out.println("Результат: правильно " + correctCount + ", неправильно " + wrongCount);
     }
 }
+
