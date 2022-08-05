@@ -8,7 +8,7 @@ public class HomeWork6 {
     public static void main(String[] args) {
         long timeStarted = System.nanoTime();
         List<Integer> list1 = Arrays.asList(5,4,5,7,8,1,3,2,9,12,54,3,44,53,9,33,32,35,67,122,13,10);
-        ArrayList <Integer> list = new ArrayList<Integer>();
+        ArrayList <Integer> list = new ArrayList<>();
         list.addAll(list1);
         System.out.println("До сортировки " + list);
        /* for (int i=0; i<1000000; i++) {

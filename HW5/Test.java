@@ -1,5 +1,6 @@
 package ru.otus.homeworks.HW5;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Question {
@@ -26,19 +27,20 @@ class Question {
       /*  for (int i = 0; i < questions.length; i++) {
             System.out.println(questions[i].question);*/
         int i = 0;
+        int k = 0;
             while (i < questions.length) {
                 System.out.println(questions[i].question);
-                i++;
-
 
 
            /* for (int j = 0; j < questions[i].answersOptions.length ; j++) { //  each
                 System.out.println(questions[i].answersOptions[j]);
             }*/
-                int k = 0;
-                for (Question j : questions) {
-                    System.out.println(j.answersOptions[k]);
+
+                for (int an : questions[i].answersOptions) {  // почему тип int а не Question
+                    System.out.println(an);
+
                 }
+                i++;
 
                 System.out.println("Ваш ответ: ");
 
