@@ -6,6 +6,10 @@ class Client extends Bank {
         this.age = age;
 
     }
+    @Override
+    public String toString() {
+        return name;
+    }
 }
 
 public class Account extends Bank {
@@ -14,6 +18,11 @@ public class Account extends Bank {
     public Account(int accountNumber, double goldBalance) {
         this.accountNumber = accountNumber;
         this.goldBalance = goldBalance;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(accountNumber);
     }
 }
      /*    List<Account> listOfAccount = new ArrayList<>();

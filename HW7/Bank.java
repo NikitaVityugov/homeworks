@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Bank {
     public static void main(String[] args) {
@@ -20,7 +17,14 @@ public class Bank {
         bank.hash.put(client4, Arrays.asList(new Account(1239, 5.2),
                 new Account(1240, 5.5)));
 
-        System.out.println(bank.hash.get(client2));
+        List<Account> hash1 = bank.hash.get(client2);
+        System.out.println(hash1);
+
+/*
+        for (HashMap.Entry<Client, List<Account>> hash2: bank.hash.entrySet()) {
+            System.out.println("Имя клиента: " + hash2.getKey() + ", который имеет счета:  " + hash2.getValue());
+        }
+*/
     }
     HashMap<Client, List<Account>> hash = new HashMap<>();
     List<Client> listOfClient = new ArrayList<>();
