@@ -1,19 +1,20 @@
 package ru.otus.homeworks.HW8;
 
 public class Rethrow {
-    public static void main(String args[]) {  // №2
+    public static void main(String args[]) {
+
         try {
             div(5, 0);
-        } catch (ArithmeticException e) {
-            System.out.println("В процессе выполнения снова произошла арифметическая ошибка:");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
-        public static void div (int a, int b) throws ArithmeticException{
+        public static void div (int a, int b) throws RuntimeException {
             try {
                 System.out.println(a / b);
             } catch (ArithmeticException e) {
-                System.out.println("В процессе выполнения произошла арифметическая ошибка: (деление на ноль)");
-                throw e;
+                System.out.println(e);
+                throw new IllegalArgumentException(e);
             }
         }
 }
